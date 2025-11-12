@@ -1,4 +1,15 @@
-PASO CRÍTICO: Actualizar Hashes CSS/JS
+CONFIGURAR BASE DE DATOS =
+
+Cargar backup (RECOMENDADO)
+# Esperar 30 segundos que MySQL esté listo
+docker exec -i laravel-mysql mysql -u root -p"root_password_segura" laravel_db < backup_completo.sql
+
+Opción B: Migraciones frescas
+docker exec -it laravel-apache php artisan migrate --seed
+
+
+
+PASO CRÍTICO: Actualizar Hashes CSS/JS =
 Después de docker-compose up -d y docker exec -it laravel-node npm run build:
 Ver los nuevos archivos generados:
 bash
