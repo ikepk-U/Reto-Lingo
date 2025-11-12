@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* === ESTILOS ESPECÍFICOS PARA EL JUEGO DENTRO DE LARAVEL === */
+.lingo-container {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 30px;
+    margin: 0;
+    background-color: #F9ECD9;
+    overflow: hidden;
+}
+
+/* Logo LINGO */
+.logo-container {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.logo-container img {
+    max-width: 300px;
+    height: auto;
+}
+
+/* Contenedor principal */
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    padding-bottom: 20px;
+}
+
+/* Contenedor de la tabla con espacio para el indicador */
+.contenedor-tablero {
+    position: relative;
+    margin: 5px auto;
+}
+
+/* Tabla principal del juego */
+#lingo {
+    border-spacing: 8px !important;
+    margin: 0 auto;
+    border-collapse: separate !important;
+}
+
+#lingo td {
+    width: 120px !important;
+    height: 100px !important;
+    border: 2px solid #37382F !important;
+    background-color: #E3E1DA !important;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 8px !important;
+    color: #37382F;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* INDICADOR DE FILA ACTUAL */
+.indicador-fila {
+    position: absolute;
+    left: -30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #37382F;
+    transition: top 0.3s ease;
+}
+
+/* ESTADOS DE LAS LETRAS - MÁS ESPECÍFICOS */
+#lingo td.verde {
+    background-color: #96D796 !important;
+    color: #37382F !important;
+    border-color: #37382F !important;
+}
+
+#lingo td.naranja {
+    background-color: #E1C367 !important;
+    color: #37382F !important;
+    border-color: #37382F !important;
+}
+
+#lingo td.rojo {
+    background-color: #F95F5F !important;
+    color: white !important;
+    border-color: #37382F !important;
+}
+
+/* Teclado */
+.teclado {
+    margin: 20px auto;
+    border-spacing: 5px !important;
+    border-collapse: separate !important;
+}
+
+.teclado td {
+    width: 50px !important;
+    height: 50px !important;
+    background-color: #CFCFCB !important;
+
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px !important;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    color: #37382F;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.teclado td:hover {
+    transform: scale(1.2);
+
+}
+
+/* Botones especiales */
+.boton-especial {
+    background-color: #A0A0A0 !important;
+    font-size: 14px;
+}
+
+/* Temporizador */
+#temporizador {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #37382F;
+    margin: 15px 0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 2px solid #37382F;
+    background-color: #E3E1DA;
+    min-height: 20px;
+}
+
+/* Modal de resultado */
+.modal {
+    position: fixed;
+    top: 64px !important;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 64px) !important;
+    background-color: rgba(55, 56, 47, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background-color: #E3E1DA;
+    padding: 30px;
+    border-radius: 15px;
+    border: 4px solid #37382F;
+    text-align: center;
+    max-width: 400px;
+    margin-top: 0 !important;
+}
+
+.modal h2 {
+    color: #37382F;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.modal p {
+    color: #37382F;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* Botón nueva partida */
+button {
+    background-color: #E1C367;
+    color: #37382F;
+    border: 3px solid #37382F;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #E1C367;
+    transform: scale(1.05);
+}

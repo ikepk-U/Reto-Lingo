@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* === ESTILOS ESPECÍFICOS PARA EL JUEGO DENTRO DE LARAVEL === */
+.lingo-container {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height: calc(100vh - 64px); /* Cambiado de height a min-height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 30px;
+    margin: 0;
+    background-color: #F9ECD9;
+    overflow: auto; /* Permitir scroll */
+}
+
+/* Logo LINGO */
+.logo-container {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.logo-container img {
+    max-width: 300px;
+    height: auto;
+}
+
+/* Contenedor principal - TAMAÑO RAZONABLE */
+.contenedor-estadisticas {
+    width: 100%;
+    max-width: 1200px; /* Tamaño máximo razonable */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Tarjetas de estadísticas - TAMAÑO CONTROLADO */
+.tarjeta {
+    background-color: #E3E1DA;
+    border: 3px solid #37382F;
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: fit-content; /* Ajustar al contenido */
+}
+
+.tarjeta-grande {
+    grid-column: 1 / -1;
+}
+
+/* Títulos */
+h1 {
+    color: #37382F;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: #37382F;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-bottom: 3px solid #37382F;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.posicion-global {
+    background-color: #96D796;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+h3 {
+    color: #37382F;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* Estadísticas principales - VICTORIAS/DERROTAS */
+.stats-principales {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.victorias {
+    flex: 2;
+    text-align: center;
+    padding: 25px;
+    background-color: #96D796;
+    border: 2px solid #37382F;
+    border-radius: 10px;
+}
+
+.derrotas {
+    flex: 1;
+    text-align: center;
+    padding: 25px;
+    background-color: #F95F5F;
+    border: 2px solid #37382F;
+    border-radius: 10px;
+}
+
+.stat-numero {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #37382F;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #37382F;
+    font-weight: 600;
+}
+
+/* Records - MÁS COMPACTOS */
+.records {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.record-item {
+    text-align: center;
+    padding: 20px 15px;
+    background-color: #F9ECD9;
+    border: 2px solid #37382F;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.record-intento {
+    font-weight: 600;
+    color: #96D796;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.record-valor {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #37382F;
+}
+
+/* Ranking de jugadores - CON SCROLL SI ES NECESARIO */
+.tabla-ranking {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tabla-ranking th {
+    background-color: #E1C367;
+    color: #37382F;
+    padding: 15px 10px;
+    text-align: left;
+    font-weight: 600;
+    border: 2px solid #37382F;
+}
+
+.tabla-ranking td {
+    padding: 12px 10px;
+    border: 2px solid #37382F;
+    background-color: #F9ECD9;
+}
+
+/* USUARIO ACTUAL DESTACADO */
+.usuario-actual {
+    background-color: #E1C367 !important;
+    font-weight: bold;
+}
+
+.usuario-actual td {
+    background-color: #E1C367 !important;
+}
+
+.indicador-tu {
+    background-color: #F95F5F;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.usuario-actual:hover td {
+    background-color: #E1C367 !important;
+}
+
+.posicion {
+    font-weight: bold;
+    color: #F95F5F;
+    text-align: center;
+    width: 50px;
+}
+
+/* Botones */
+.boton-volver {
+    background-color: #E1C367;
+    color: #37382F;
+    border: 3px solid #37382F;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 30px; /* Espacio abajo */
+}
+
+.boton-volver:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor-estadisticas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+        max-width: 95%; /* Más estrecho en móvil */
+    }
+    
+    .stats-principales {
+        flex-direction: column;
+    }
+    
+    .records {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .logo-container img {
+        max-width: 280px;
+    }
+    
+    .indicador-tu {
+        margin-left: 0;
+        margin-top: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .records {
+        grid-template-columns: 1fr;
+    }
+    
+    .contenedor-estadisticas {
+        padding: 0 10px;
+        max-width: 98%;
+    }
+    
+    .tarjeta {
+        padding: 25px;
+    }
+}
