@@ -1,0 +1,27 @@
+PASO CRÍTICO: Actualizar Hashes CSS/JS
+Después de docker-compose up -d y docker exec -it laravel-node npm run build:
+Ver los nuevos archivos generados:
+bash
+docker exec -it laravel-node ls /var/www/html/public/build/assets/
+Verás algo como: app-ABC123.css y app-XYZ789.js
+
+Actualizar en estos 3 archivos:
+src/resources/views/layouts/app.blade.php
+src/resources/views/layouts/guest.blade.php
+src/resources/views/welcome.blade.php
+
+Cambiar:
+blade
+<!-- ANTES -->
+<link rel="stylesheet" href="{{ asset('build/assets/app-BPaCKDTH.css') }}">
+<script src="{{ asset('build/assets/app-ByW0VTRm.js') }}" defer></script>
+
+<!-- DESPUÉS -->  
+<link rel="stylesheet" href="{{ asset('build/assets/app-ABC123.css') }}">
+<script src="{{ asset('build/assets/app-XYZ789.js') }}" defer></script>
+
+Limpiar cache:
+bash
+docker exec -it laravel-apache php artisan cache:clear
+docker exec -it laravel-apache php artisan config:clear
+docker exec -it laravel-apache php artisan view:clear
